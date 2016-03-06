@@ -1,9 +1,11 @@
+val commands = listOf(TurnOn, TurnOff, Toggle)
+
 fun main(args: Array<String>) {
     val s = mutableSetOf<Coordinate>()
-    inputAdvent6.forEach {
-        TurnOn.fromString(it).act(s)
-        TurnOff.fromString(it).act(s)
-        Toggle.fromString(it).act(s)
+    inputAdvent6.forEach { input ->
+        commands.forEach {
+            it.fromString(input).act(s)
+        }
     }
     println(s.count())
 }
